@@ -30,3 +30,23 @@ Now you use the keyboard to navigate, you should see the card with the title and
 All the other elements have a blue outline around.
 
 File: [keyboard/01-styles.css](keyboard/01-styles.css), [keyboard/01-index.html](keyboard/01-index.html)
+
+## 1. add the skip-links
+
+Using the 00-index.html provided in the previous task, in your skip-links/01-index.html file, just after the <body> HTML open tag
+
+    Add the <!-- Skip links --> comment
+    Create a new <nav> tag with the aria-label attribute. Put the value Skip links inside it.
+        Create a non ordered list of class off-screen
+            Create a first li with a link inside
+                Href: #a11y-primary-nav
+                Class: skip-link
+                Text: Skip to primary navigation
+            Create a second li with a link inside
+                Href: #a11y-main-content
+                Class: skip-link
+                Text: Skip to main content
+    On the <nav class="navbar-menu">, add an id with the text: a11y-primary-nav and a tabindex="-1"
+    On the <main> tag, add an id with the text: a11y-main-content, and tabindex="-1"
+
+00-article.html is provided to you below to repeat the same changes in your skip-links/01-article.html file
