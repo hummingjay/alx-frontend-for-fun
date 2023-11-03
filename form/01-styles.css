@@ -656,7 +656,7 @@ ul.row {
   padding-left: 7rem;
 }
 
-.post-comments [class*='section-title'] {
+.post-comments .section-title {
   font-variant: small-caps;
 }
 
