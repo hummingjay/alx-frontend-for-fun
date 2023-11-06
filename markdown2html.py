@@ -12,7 +12,8 @@ if __name__ == "__main__":
         print("Usage: ./markdown2html.py README.md README.html")
         sys.exit(1)
     elif not isfile(sys.argv[1]):
-        print (f"missing {sys.argv[1]}")
+        print("Usage: ./markdown2html.py README.md README.html")
+        print (f"Missing {sys.argv[1]}")
         sys.exit(1)
     else:
         sys.exit(0)
