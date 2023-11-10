@@ -1,0 +1,33 @@
+/*hide checkbox*/
+.toggle input {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 206px;
+  height: 68px;
+  border-radius: 68px;
+  background: lightgrey;
+  transition: 0.2s;
+  display: inline-block;
+}
+
+.toggle-label input::before,
+.toggle-label input::after {
+  z-index: 2;
+  position: absolute;
+  top: 56%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.toggle-label input::before {
+  content: "Yes";
+  left: 20px;
+  color: white;
+}
+
+.toggle-label input:checked {
+  background: red
+}
