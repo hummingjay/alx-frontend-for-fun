@@ -15,5 +15,4 @@ if __name__ == "__main__":
         print(f"Missing {sys.argv[1]}", file=sys.stderr)
         sys.exit(1)
 
-    else:
-        sys.exit(0)
+    sys.exit(0)
