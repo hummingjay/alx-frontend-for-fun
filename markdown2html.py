@@ -19,12 +19,13 @@ if __name__ == "__main__":
     # To read the file
     with open(sys.argv[1], 'r') as f:
         target = open(sys.argv[2], 'w')
-        Headings = f.readlines()
-        for x in Headings:
+        html = f.readlines()
+        for x in html:
             '''
             method that returns True if the input string
-            starts with the specified prefix(string)
+            starts with the specified prefix(string): rstrip
             '''
+            # Check the headings
             if x.startswith('#'):
                 # rstrip remove trailing line
                 text = x.rstrip()
@@ -46,6 +47,15 @@ if __name__ == "__main__":
                 elif x.startswith('#'):
                     line = ("<h1>" + text[2::1] + "</h1>" + "\n")
                     target.write(line)
+
+            # check for unordered list
+            elif x.startswith('-'):
+                text = x.rstrip()
+                line = ("<li>" + text[2::1] + "</li>" + "\n")
+                target.write("<ul>\n")
+                target.write(line)
+                target.write("</ul>\n")
+
             else:
                 target.write(x)
         target.close()
