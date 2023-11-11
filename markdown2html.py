@@ -35,13 +35,13 @@ if __name__ == "__main__":
                     line = ("<h5>" + text[6::1] + "</h5>" + "\n")
                     target.write(line)
                 elif x.startswith('####'):
-                    line = ("<h4>" + text[5::1] + "<h4>" + "\n")
+                    line = ("<h4>" + text[5::1] + "</h4>" + "\n")
                     target.write(line)
                 elif x.startswith('###'):
-                    line = ("<h3>" + text[4::1] + "<h3>" + "\n")
+                    line = ("<h3>" + text[4::1] + "</h3>" + "\n")
                     target.write(line)
                 elif x.startswith('##'):
-                    line = ("<h2>" + text[3::1] + "<h2>" + "\n")
+                    line = ("<h2>" + text[3::1] + "</h2>" + "\n")
                     target.write(line)
                 elif x.startswith('#'):
                     line = ("<h1>" + text[2::1] + "</h1>" + "\n")
