@@ -66,6 +66,7 @@ if __name__ == "__main__":
             elif in_list and character.startswith('-'):
                 target.write("</ul>\n")
                 target.write(x)
+                in_list = False
             else:
                 target.write(x)
                 character = x
