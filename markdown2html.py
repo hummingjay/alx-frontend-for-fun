@@ -56,7 +56,7 @@ if __name__ == "__main__":
             # check for unordered list
             elif x.startswith('-'):
                 if not in_list:
-                    target.write("</ul>\n")
+                    target.write("<ul>\n")
                     in_list = True
 
                 text = x.rstrip()
