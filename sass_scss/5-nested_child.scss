@@ -1,0 +1,10 @@
+/* nested declarations apply to first class */
+body {
+  color: #3D3D3D;
+
+  > :first-child {
+    .red {
+      color: #FF0000;
+    }
+  }
+}
