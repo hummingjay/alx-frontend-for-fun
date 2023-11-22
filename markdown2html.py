@@ -22,7 +22,8 @@ if __name__ == "__main__":
         target = open(sys.argv[2], 'w')
         html = f.readlines()
 
-        in_list = False
+        ul_list = False
+        ol_list = False
 
         for x in html:
             '''
@@ -55,22 +56,40 @@ if __name__ == "__main__":
                 character = x
             # check for unordered list
             elif x.startswith('-'):
-                if not in_list:
+                if not ul_list:
                     target.write("<ul>\n")
-                    in_list = True
+                    ul_list = True
 
                 text = x.rstrip()
                 line = ("<li>" + text[2::1] + "</li>" + "\n")
                 target.write(line)
                 character = x
-            elif in_list and character.startswith('-'):
+            elif ul_list and character.startswith('-'):
                 target.write("</ul>\n")
                 target.write(x)
-                in_list = False
+                ul_list = False
+
+            # check fo ordered lists
+            elif x.startswith('*'):
+                if not ol_list:
+                    target.write("<ol>\n")
+                    ol_list = True
+                
+                text = x.rstrip()
+                line = ("<li>" + text[2::1] + "</li>" + "\n")
+                target.write(line)
+                character = x
+            elif ol_list and character.startswith('*'):
+                target.write("</ol>\n")
+                ol_list = False
+                target.write(x)
+
             else:
                 target.write(x)
                 character = x
-        if in_list:
+        if ul_list:
             target.write("</ul>\n")
+        if ol_list:
+            target.write("</ol>\n")
         target.close()
     sys.exit(0)
